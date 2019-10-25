@@ -6,12 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Blackjack.js"></script>
+    <script src="player.js"></script>
 </head>
 
 <body>
-    <h1>Mattes Blackjack</h1>
-    Name<input type="text" id="nameInput" placeholder="Enter your name">
-
+    <div class="header">
+        <h2>Mattes Blackjack</h2>
+        <input type="text" id="nameCatcher" placeholder="Enter your name"><input type="submit" id="submitBtn" placeholder="Submit" onclick="gameStart()">
+        <!--<button type="button" id="startBtn" onclick="gameStart()">Click me</button>-->
+    </div>
+    <div class="container">
+        <div class="playerColumn" style="background-color:#aaa;">
+            <h2>Player</h2>
+            <div class="playerCard1"></div>
+            <div class="playerCard2"></div>
+        </div>
+        <div class="dealerColumn" style="background-color:#ccc;">
+            <h2>Dealer</h2>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Footer</p>
+    </div>
 </body>
 
 </html>
