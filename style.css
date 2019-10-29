@@ -16,6 +16,13 @@
             font-size: 30px;
         }
         
+        .nameField {
+            margin: auto;
+            background-color: blue;
+            height: 100px;
+            padding: 5px;
+        }
+        
         .container {
             background-color: blue;
             height: 75%;

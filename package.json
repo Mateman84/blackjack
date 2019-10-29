@@ -1,0 +1,19 @@
+{
+    "name": "blackjack",
+    "version": "1.0.0",
+    "description": "blackjackgame",
+    "main": "Blackjack.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Mateman84/blackjack.git"
+    },
+    "author": "Mattias Englund",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Mateman84/blackjack/issues"
+    },
+    "homepage": "https://github.com/Mateman84/blackjack#readme"
+}

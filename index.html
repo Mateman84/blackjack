@@ -7,19 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="Blackjack.js"></script>
-    <script src="player.js"></script>
 </head>
 
 <body>
     <div class="header">
         <h2>Mattes Blackjack</h2>
-        <input type="text" id="nameCatcher" placeholder="Enter your name"><input type="submit" id="submitBtn" placeholder="Submit" onclick="gameStart()">
-        <!--<button type="button" id="startBtn" onclick="gameStart()">Click me</button>-->
+        <div class="nameField">
+            <input type="text" id="nameCatcher" placeholder="Enter your name"><input type="button" id="startBtn"></button>
+            <select id="betSize">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                  </select>
+            <!--<button type="button" id="startBtn" onclick="gameStart()">Click me</button>-->
+        </div>
     </div>
     <div class="container">
         <div class="playerColumn" style="background-color:#aaa;">
-            <h2>Player</h2>
+            <h2 id="playerName">Player</h2>
             <div class="playerCard1"></div>
             <div class="playerCard2"></div>
         </div>
@@ -28,8 +35,11 @@
         </div>
     </div>
     <div class="footer">
+
         <p>Footer</p>
     </div>
+    <script src="player.js"></script>
+    <script src="Blackjack.js"></script>
 </body>
 
 </html>
