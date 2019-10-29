@@ -10,6 +10,8 @@ button.onclick = function gameStart() {
     if (playerOne.name != "") {
         console.log("Name of the player is: " + playerOne.name + " and you have: " + playerOne.hand + " cards" + " and you've bet " + playerOne.bet + ".");
         document.getElementById("playerName").innerHTML = playerOne.name;
+        createDeck();
+        shuffle();
     } else {
         alert("You need to enter a name!");
     }
@@ -18,6 +20,7 @@ button.onclick = function gameStart() {
 
 function firstCard() {
     console.log("Your first card is ")
+
 }
 
 /*function myFunction() {
