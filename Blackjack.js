@@ -1,5 +1,7 @@
 let playerOne = new Player();
+let gameDeck = new Deck();
 var button = document.getElementById("startBtn");
+
 
 button.onclick = function gameStart() {
     var indexOfBetsize = document.getElementById("betSize").selectedIndex;
@@ -10,8 +12,9 @@ button.onclick = function gameStart() {
     if (playerOne.name != "") {
         console.log("Name of the player is: " + playerOne.name + " and you have: " + playerOne.hand + " cards" + " and you've bet " + playerOne.bet + ".");
         document.getElementById("playerName").innerHTML = playerOne.name;
-        createDeck();
-        shuffle();
+        gameDeck.createDeck();
+        console.log(gameDeck);
+
     } else {
         alert("You need to enter a name!");
     }
@@ -19,12 +22,6 @@ button.onclick = function gameStart() {
 }
 
 function firstCard() {
-    console.log("Your first card is ")
+    console.log("Your first card is ");
 
 }
-
-/*function myFunction() {
-  var x = document.getElementById("mySelect").selectedIndex;
-  var y = document.getElementById("mySelect").options;
-  alert("Index: " + y[x].index + " is " + y[x].text);
-}*/
