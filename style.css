@@ -1,62 +1,59 @@
-        * {
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: green;
-            height: 100vh;
-        }
-        /* Style the header */
-        
-        .header {
-            background-color: #f1f1f1;
-            padding: 20px;
-            text-align: center;
-            font-size: 30px;
-        }
-        
-        .nameField {
-            margin: auto;
-            background-color: blue;
-            height: 100px;
-            padding: 5px;
-        }
-        
-        .container {
-            background-color: blue;
-            height: 75%;
-        }
-        
-        .playerColumn,
-        .dealerColumn {
-            text-align: center;
-            float: left;
-            width: 50%;
-            height: 100%;
-            padding: 10px;
-        }
-        
-        .playerCard1 {
-            background-color: black;
-            float: left;
-            width: 50%;
-            padding: 10px;
-            height: 75%;
-            opacity: 0.5;
-        }
-        
-        .playerCard2 {
-            background-color: blue;
-            float: right;
-            width: 50%;
-            padding: 10px;
-            height: 75%;
-            opacity: 0.5;
-        }
-        
-        .footer {
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-        }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: green;
+    height: 100vh;
+}
+
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.nameField {
+    margin: auto;
+    background-color: blue;
+    height: 100px;
+    padding: 5px;
+}
+
+.container {
+    height: 75%;
+}
+
+.playerColumn,
+.dealerColumn {
+    background-color: #aaaaaa;
+    text-align: center;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+}
+
+.playerCard1 {
+    background-color: green;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 75%;
+}
+
+.playerCard2 {
+    background-color: blue;
+    float: right;
+    width: 50%;
+    padding: 10px;
+    height: 75%;
+}
+
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}

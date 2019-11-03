@@ -14,33 +14,40 @@
         <h2>Mattes Blackjack</h2>
         <div class="nameField">
             <input type="text" id="nameCatcher" placeholder="Enter your name"><input type="button" id="startBtn"></button>
-            <select id="betSize">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="40">40</option>
-                    <option value="50">50</option>
-                  </select>
             <!--<button type="button" id="startBtn" onclick="gameStart()">Click me</button>-->
         </div>
+        <select id="betSize">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+          </select>
+
     </div>
     <div class="container">
-        <div class="playerColumn" style="background-color:#aaa;">
+        <div class="playerColumn">
             <h2 id="playerName">Player</h2>
-            <div class="playerCard1"></div>
-            <div class="playerCard2"></div>
+            <div class="playerCard1">
+                <p id="card1">Card1</p>
+            </div>
+
+            <div class="playerCard2">
+                <p id="card2">Card2</p>
+            </div>
+
         </div>
-        <div class="dealerColumn" style="background-color:#ccc;">
+        <div class="dealerColumn">
             <h2>Dealer</h2>
         </div>
     </div>
     <div class="footer">
-
-        <p>Footer</p>
+        <p id="scoreText">Footer</p>
     </div>
     <script src="Player.js"></script>
-    <script src="Deck.js"></script>
+    <script src="Card.js"></script>
     <script src="Blackjack.js"></script>
+
 
 </body>
 
