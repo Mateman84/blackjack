@@ -6,25 +6,25 @@ var deck = [];
 var handWeight = 0;
 var card1 = new Card();
 var card2 = new Card();
+var dCard1 = new Card();
+var dCard2 = new Card();
 var cardPres1 = document.getElementById("card1");
 var cardPres2 = document.getElementById("card2");
+var dCardPres1 = document.getElementById("dCard1");
+var dCardPres2 = document.getElementById("dCard2");
 var scoreText = document.getElementById("scoreText");
-//var card3 = document.getElementById("card1");
-//var card4 = document.getElementById("card1");
+
 
 button.onclick = function gameStart() {
     playerOne.name = document.getElementById("nameCatcher").value;
     playerOne.bet = document.getElementById("betSize").value;
     if (playerOne.name != "") {
-        console.log("Name of the player is: " + playerOne.name + " and you have: " + "0" + " cards" + " and you've bet " + playerOne.bet + ".");
         document.getElementById("playerName").innerHTML = playerOne.name;
         createDeck();
         shuffle();
-        card1 = deck.pop();
-        cardPres1.innerHTML = "First card is " + JSON.stringify(card1.suit) + " of " + JSON.stringify(card1.value);
-        card2 = deck.pop();
-        cardPres2.innerHTML = "Second card is " + JSON.stringify(card2.suit) + " of " + JSON.stringify(card2.value);
+        dealHands();
         cardScore();
+        //console.log("Name of the player is: " + playerOne.name + " and you have: " + card1.suit + " cards" + " and you've bet " + playerOne.bet + ".");
     } else {
         alert("You need to enter a name!");
     }
@@ -32,15 +32,36 @@ button.onclick = function gameStart() {
 }
 
 function cardScore() {
-    handWeight = card1.weight + card2.weight
-    if (card1.weight == 11 && card2.weight == 10 || card2.weight == 11 && card1.weight == 10) {
-        scoreText.innerHTML = "BLACKJACK!";
+    handWeight = card1.weight + card2.weight;
+    dHandWeight = dCard1.weight + dCard2.weight;
+    console.log(handWeight);
+    console.log(dHandWeight);
+    //if (card1.weight == 11 && card2.weight == 10 || card2.weight == 11 && card1.weight == 10) {
+    if (handWeight == 21 && dHandWeight == 21) {
+        scoreText.innerHTML = "Both " + playerOne.name + " and Dealer got BLACKJACK!";
+    } else if (handWeight == 21 && dHandWeight < 21) {
+        scoreText.innerHTML = playerOne.name + " got BLACKJACK!" + handWeight;
+    } else if (dHandWeight == 21 && handWeight < 21) {
+        scoreText.innerHTML = "Dealer got BLACKJACK!" + handWeight;
+    } else if (dHandWeight < 21 && dHandWeight > handWeight) {
+        scoreText.innerHTML = "Dealer has the best hand with: " + dHandWeight + " VS " + playerOne.name + " : " + handWeight;
+    } else if (handWeight < 21 && handWeight > dHandWeight) {
+        scoreText.innerHTML = playerOne.name + " has the best hand with: " + handWeight + " VS Dealers: " + dHandWeight;
     } else {
-        scoreText.innerHTML = "Your score is: " + handWeight;
+        scoreText.innerHTML = "It's a push!";
     }
-
 }
 
+function dealHands() {
+    card1 = deck.pop();
+    cardPres1.innerHTML = "First card is " + JSON.stringify(card1.value) + " of " + JSON.stringify(card1.suit);
+    dCard1 = deck.pop();
+    dCardPres1.innerHTML = "Dealer First card is " + JSON.stringify(dCard1.value) + " of " + JSON.stringify(dCard1.suit);
+    card2 = deck.pop();
+    cardPres2.innerHTML = "Second card is " + JSON.stringify(card2.value) + " of " + JSON.stringify(card2.suit);
+    dCard2 = deck.pop();
+    dCardPres2.innerHTML = "Dealer Second card is " + JSON.stringify(dCard2.value) + " of " + JSON.stringify(dCard2.suit);
+}
 
 function createDeck() {
     deck = new Array();
@@ -51,7 +72,7 @@ function createDeck() {
                 weight = 10;
             if (values[i] == "A")
                 weight = 11;
-            var card = new Card(value = values[i], suit = suits[x], weight = weight); //{ Value: values[i], Suit: suits[x], Weight: weight };
+            var card = new Card(suit = suits[x], value = values[i], weight = weight); //{ Value: values[i], Suit: suits[x], Weight: weight };
             deck.push(card);
         }
     }
